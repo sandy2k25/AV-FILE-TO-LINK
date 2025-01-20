@@ -53,7 +53,7 @@ async def start(client, message):
             ]]
             await message.reply_photo(
                 photo=(PICS),
-                caption=script.START_TXT.format(message.from_user.mention),
+                caption=script.START_TXT.format(message.from_user.mention, get_readable_time(time.time() - StartTime)),
                 reply_markup=InlineKeyboardMarkup(btn)
             )
             return
