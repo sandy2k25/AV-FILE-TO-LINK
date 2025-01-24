@@ -21,18 +21,16 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton("🛠️ Aᴅᴅ Mᴇ Yᴏᴜʀ Cʜᴀɴɴᴇʟ 🛠️", url=CHAN_LINK)
+            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
+	    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
         ],[
-            InlineKeyboardButton(' ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton(' ᴀʙᴏᴜᴛ', callback_data='about'),
-            InlineKeyboardButton(' ᴄʟᴏsᴇ', callback_data='close_data')
-	],[
-	    InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇᴅ ᴄʜᴀɴɴᴇʟ', url=CHANNEL)
+            InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
+            InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, get_readable_time(time.time() - StartTime)),
+            caption=script.START_TXT.format(message.from_user.mention, BOT_USERNAME),
             reply_markup=reply_markup
         )
         return
@@ -43,17 +41,15 @@ async def start(client, message):
             if not is_participant:
                return
             btn = [[
-                InlineKeyboardButton("🛠️ Aᴅᴅ Mᴇ Yᴏᴜʀ Cʜᴀɴɴᴇʟ 🛠️", url=CHAN_LINK)
+                InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
+	        InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
             ],[
-               InlineKeyboardButton(' ʜᴇʟᴘ', callback_data='help'),
-               InlineKeyboardButton(' ᴀʙᴏᴜᴛ', callback_data='about'),
-               InlineKeyboardButton(' ᴄʟᴏsᴇ', callback_data='close_data')
-       	    ],[
-  	       InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇᴅ ᴄʜᴀɴɴᴇʟ', url=CHANNEL)
+                InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
+                InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
             ]]
             await message.reply_photo(
                 photo=(PICS),
-                caption=script.START_TXT.format(message.from_user.mention, get_readable_time(time.time() - StartTime)),
+                caption=script.START_TXT.format(message.from_user.mention, BOT_USERNAME),
                 reply_markup=InlineKeyboardMarkup(btn)
             )
             return
@@ -68,33 +64,30 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton(' ʜᴇʟᴘ', callback_data='help'),
-	    InlineKeyboardButton(' ᴄʟᴏsᴇ', callback_data='close_data')
+            InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
+	    InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
 	],[
-	    InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇᴅ ᴄʜᴀɴɴᴇʟ', url=CHANNEL)
+	    InlineKeyboardButton('☢️ ʙᴏᴛ ᴏᴡɴᴇʀ ☢️', url=f"https://t.me/{OWNER_USERNAME}")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         me2 = (await client.get_me()).mention
         await query.message.edit_text(
-            text=script.ABOUT_TXT.format(me2, me2, __version__),
+            text=script.ABOUT_TXT.format(me2, me2, get_readable_time(time.time() - StartTime), __version__),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
     
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton("🛠️ Aᴅᴅ Mᴇ Yᴏᴜʀ Cʜᴀɴɴᴇʟ 🛠️", url=CHAN_LINK)
+            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
+	    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
         ],[
-            InlineKeyboardButton(' ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton(' ᴀʙᴏᴜᴛ', callback_data='about'),
-            InlineKeyboardButton(' ᴄʟᴏsᴇ', callback_data='close_data')
-	],[
-	    InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇᴅ ᴄʜᴀɴɴᴇʟ', url=CHANNEL)
+            InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
+            InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, get_readable_time(time.time() - StartTime)),
+            text=script.START_TXT.format(query.from_user.mention, BOT_USERNAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -105,11 +98,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 	
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('ᴀᴅᴍɪɴ ', callback_data='admincmd'),
-	    InlineKeyboardButton(' ʜᴏᴍᴇ', callback_data='start'),
-	    InlineKeyboardButton(' ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('• ᴀᴅᴍɪɴ •', callback_data='admincmd')
 	],[
-	    InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇᴅ ᴄʜᴀɴɴᴇʟ', url=CHANNEL)
+	    InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
+	    InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -123,7 +115,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if not query.from_user.id in ADMINS:
             return await query.answer('This Feature Is Only For Admins !' , show_alert=True)
         buttons = [[
-            InlineKeyboardButton(' ʜᴏᴍᴇ', callback_data='start')
+            InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -179,7 +171,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 @Client.on_message(filters.command("help"))
 async def help(client, message):
     btn = [[
-       InlineKeyboardButton(' ᴄʟᴏsᴇ', callback_data='close_data')
+       InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
     ]]
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_text(
@@ -194,12 +186,12 @@ async def help(client, message):
 @Client.on_message(filters.command("about"))
 async def about(client, message):
     buttons = [[
-       InlineKeyboardButton(' ᴄʟᴏsᴇ', callback_data='close_data')
+       InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     me2 = (await client.get_me()).mention
     await message.reply_text(
-        text=script.ABOUT_TXT.format(me2, me2, __version__),
+        text=script.ABOUT_TXT.format(me2, me2, get_readable_time(time.time() - StartTime), __version__),
         reply_markup=reply_markup
     )
 	
