@@ -41,6 +41,7 @@ If you encounter any issues deploying the bot, feel free to seek assistance in o
 * `API_HASH` - Get api hash from <a href="https://my.telegram.org" target="/blank">Telegram Auth</a>
 * `ADMINS` - Bot admin/owner user id Separate multiple Admins by space.
 * `BOT_USERNAME` : Your Bot Username Without @
+* `OWNER_USERNAME` : Your Username Without @
 * `DATABASE_URI` - Mongo Database URL from <a href="https://cloud.mongodb.com" target="/blank">Mongo DB</a>
 * `DATABASE_NAME` - Your database name from mongoDB. `(Optional)`
 * `BIN_CHANNEL` : Create a new channel (private/public) and add that channel id in this field.
