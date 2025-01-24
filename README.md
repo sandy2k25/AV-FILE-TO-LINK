@@ -133,6 +133,11 @@ python3 bot.py
 
 - [𝙰𝙼𝙰𝙽 𝚅𝙸𝚂𝙷𝚆𝙰𝙺𝙰𝚁𝙼𝙰](https://telegram.me/BOT_OWNER26)
 
+### CREDIT DEVELOPER
+
+- [𝙰𝙼𝙰𝙽 𝚅𝙸𝚂𝙷𝚆𝙰𝙺𝙰𝚁𝙼𝙰](https://telegram.me/BOT_OWNER26)
+- [Rᴀᴊ Vᴇʀᴍᴀ ⚝](https://telegram.me/Rjverma6435)
+- 
 ### BUY ME A COFFEE
 
 - [PHONE PE](https://envs.sh/Hgz.jpg)
