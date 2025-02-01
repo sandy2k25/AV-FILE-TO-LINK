@@ -57,7 +57,7 @@ Cʜᴀɴɴᴇʟ Uꜱᴀɢᴇ:
 • Uᴘᴅᴀᴛᴇꜱ: @Mvtrual_bot
 • Sᴜᴘᴘᴏʀᴛ: @Mvtrual_bot
 
- <u><i>ʀᴇᴘᴏʀᴛ ʙᴜɢs ᴛᴏ  <a href='https://t.me/AV_OWNER_BOT'>ᴅᴇᴠᴇʟᴏᴘᴇʀ</a></u></i></b>"""
+ <u><i>ʀᴇᴘᴏʀᴛ ʙᴜɢs ᴛᴏ  <a href='https://t.me/Mvtrual_bot'>ᴅᴇᴠᴇʟᴏᴘᴇʀ</a></u></i></b>"""
 
 #Dont Remove My Credit @AV_BOTz_UPDATE 
 #This Repo Is By @BOT_OWNER26 
